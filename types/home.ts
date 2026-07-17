@@ -83,3 +83,94 @@ export interface PerfomanceBlock {
   heading: string;
   perfomance_group: PerfomanceGroup[];
 };
+
+export interface ProjectItem {
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string;
+  featured_image: string;
+}
+
+export interface OurProjects {
+  short_heading: string;
+  heading: string;
+  button: {
+    title: string;
+    url: string;
+  };
+  works_gallery: number[];
+}
+
+export interface ServiceItem {
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string;
+  featured_image: string;
+}
+
+export interface OurServices {
+  short_heading: string;
+  heading: string;
+  button: {
+    title: string;
+    url: string;
+  };
+  service_list: number[];
+}
+
+export interface ProcessItem {
+  process_title: string;
+  process_sub_title: string;
+  process_description: string;
+}
+
+export interface ProcessBlock {
+  short_heading: string;
+  heading: string;
+  process_list: ProcessItem[];
+}
+
+export interface TestimonialItem {
+  video_or_content_block: "Video Box" | "Content Box";
+
+  video_file?: {
+    url: string;
+  };
+
+  description?: string;
+
+  name?: string;
+
+  designation?: string;
+
+  partner_logo?: {
+    url: string;
+    alt: string;
+  };
+}
+
+export interface TestimonialBlock {
+  short_heading: string;
+  heading: string;
+  testimonial_list: TestimonialItem[];
+}
+
+export interface BlogPosts {
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+  excerpt: string;
+  featured_image: string;
+  categories: [];
+}
+
+export interface OurInsights {
+  short_heading: string;
+  heading: string;  
+  insights_list: number[];
+}

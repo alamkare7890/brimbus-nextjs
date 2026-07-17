@@ -1,14 +1,13 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import ProjectCard from "../common/ProjectCard";
 
 import ThemeButton from "../common/ThemeButton";
+import type { OurProjects, ProjectItem } from "@/types/home";
+import { getProjectsByIds } from "@/lib/wordpress/projects";
 
-
-
-import type { ProjectBlock } from "@/types/home";
 type Props = {
-  data: ProjectBlock;
+  data: OurProjects;
 };
 export default function ProjectSection({ data }: Props) {
   const gridClasses = [
@@ -19,15 +18,21 @@ export default function ProjectSection({ data }: Props) {
     "md:row-start-2 md:col-start-2 md:col-end-4",
     "md:row-start-2 md:col-start-4 md:col-end-5",
   ];
+  const [projects, setProjects] = useState<ProjectItem[]>([]);
 
+  useEffect(() => {
+    async function load() {
+      const result = await getProjectsByIds(data.works_gallery);
+      setProjects(result);
+    }
+
+    load();
+  }, [data.works_gallery]);
 
   return (
     <section className="project_block py-16 sm:py-20 md:py-24 lg:py-32 bg-[#111111]">
 
-      <div className="custom-cursor">
-        <p>Expand</p>
-        <span>+</span>
-      </div>
+
 
       <div className="container_wrapper">
 
@@ -40,7 +45,7 @@ export default function ProjectSection({ data }: Props) {
             </h6>
 
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-2 font-medium text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-2 font-medium text-[#FFFFFF]"
               dangerouslySetInnerHTML={{ __html: data.heading }}
             />
 
@@ -66,7 +71,7 @@ export default function ProjectSection({ data }: Props) {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-8 md:gap-6 xl:gap-9">
 
-          {data.works_gallery.map((project, index) => (
+          {projects.map((project, index) => (
             
             <ProjectCard
               key={index}

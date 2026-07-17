@@ -33,6 +33,7 @@ export interface SiteLogo {
 export interface CTAGroup {
   heading: string;
   button: Button;
+  background_image: string;
 }
 
 export interface SocialItem {

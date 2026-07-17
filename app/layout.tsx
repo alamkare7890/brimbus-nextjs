@@ -46,7 +46,7 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
           </main>
-        {/* <Footer data={Globals}/> */}
+        <Footer data={Globals}/>
             
           <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>

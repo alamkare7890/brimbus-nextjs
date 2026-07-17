@@ -1,9 +1,15 @@
 import { wpFetch } from "./client";
 
 export async function getPosts() {
-  return wpFetch("/wp/v2/posts?_embed");
+  return wpFetch(`/custom/v1/posts`);
 }
-
-export async function getPost(slug: string) {
-  return wpFetch(`/wp/v2/posts?slug=${slug}&_embed`);
+export async function getPost(id: number) {
+  return wpFetch(`/custom/v1/posts/${id}`);
+}
+export async function getPostBySlug(slug: string) {
+  return wpFetch(`/custom/v1/posts/${slug}`);
+}
+export async function getPostsByIds(ids: number[]) {
+  const posts = await wpFetch(`/custom/v1/posts?ids=${ids.join(",")}`);
+  return posts;
 }

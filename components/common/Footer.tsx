@@ -14,14 +14,15 @@ export default function Footer({ data }: Props) {
     <footer className="site_footer">
         <div className="footer_b invisible">
             <Image
-                src={data.site_logo.url}
-                alt={data.site_logo.alt}
+                src={data.cta_group.background_image.url}
                 width={150}
                 height={50}
                 />
         </div>
         <div className="container_cover bg-cover bg-no-repeat bg-center"
-            style={{backgroundImage: "url(`{data.cta_group.background_image.url}`)"}}>
+            style={{
+                backgroundImage: `url(${data.cta_group.background_image.url})`,
+                }}>
             <div className="container_wrapper bg-transparent pt-20">
                 <div className="footer_cta_content text-center w-full lg:max-w-[75%] mx-auto">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-2 font-medium text-white"
