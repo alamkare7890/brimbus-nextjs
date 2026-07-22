@@ -50,7 +50,7 @@ export default function AboutOverview({ data }: Props) {
             {data.button && (
               <div className="mt-8">
                 <ThemeButton
-                  href={data.button}
+                  href={data.button.url}                  
                   className="inline-flex items-center rounded-full bg-black px-6 py-3 text-white transition hover:bg-gray-800"
                 >
                   Learn More

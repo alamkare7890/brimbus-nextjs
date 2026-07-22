@@ -91,8 +91,7 @@ export default function AboutSuccessStories({ data }: Props) {
             {data.button?.title && (
               <div className="mx-auto md:mr-0 mt-6 text-center md:text-start hidden lg:block">
                 <ThemeButton
-                  href={data.button.url}
-                  target={data.button.target || "_self"}
+                  href={data.button.url}                  
                   className="theme_button theme_button_dark bg-white"
                 >
                   <span className="button__spotlight"></span>
@@ -114,8 +113,7 @@ export default function AboutSuccessStories({ data }: Props) {
             {data.button?.title && (
               <div className="mt-6 block lg:hidden">
                 <ThemeButton
-                  href={data.button.url}
-                  target={data.button.target || "_self"}
+                  href={data.button.url}                  
                   className="theme_button theme_button_dark bg-white"
                 >
                   <span className="button__spotlight"></span>

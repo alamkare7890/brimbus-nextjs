@@ -7,7 +7,14 @@ import type { Swiper as SwiperType } from "swiper";
 import { gsap } from "gsap";
 import "swiper/css";
 
+type Image = {
+  url: string;
+  alt?: string;
+};
 
+type Props = {
+  images: Image[];
+};
 export default function PanoramaSlider({ images }: Props) {
   const swiperRef = useRef<SwiperType | null>(null);
 

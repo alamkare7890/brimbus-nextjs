@@ -1,20 +1,20 @@
 const API = process.env.WORDPRESS_API!;
+export async function wpFetch(endpoint: string, options: RequestInit = {}) {
+  const url = `${process.env.WORDPRESS_API}${endpoint}`;
 
-export async function wpFetch(
-  endpoint: string,
-  options: RequestInit = {}
-) {
-  const res = await fetch(`https://api.brimbus.com/wp-json${endpoint}`, {
-    ...options,
-    next: {
-      revalidate: 300, // Cache for 60 seconds
-    },
-  }); 
+  console.log("Fetching:", url);
 
-  if (!res.ok) { 
+  const res = await fetch(url, options);
+
+  if (!res.ok) {
+    const body = await res.text();
+
+    console.error("FAILED URL:", url);
+    console.error("STATUS:", res.status);
+    console.error("BODY:", body);
+
     throw new Error(`WordPress API Error: ${res.status}`);
   }
 
   return res.json();
 }
-console.log("API:", process.env.WORDPRESS_API);

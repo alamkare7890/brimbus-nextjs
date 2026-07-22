@@ -3,6 +3,10 @@ export interface Button {
   url: string;
   target: string;
 }
+export interface Image {
+  url: string;
+  alt: string;
+}
 
 export interface SiteLogo {
   ID: number;
@@ -33,7 +37,9 @@ export interface SiteLogo {
 export interface CTAGroup {
   heading: string;
   button: Button;
-  background_image: string;
+  background_image: {
+    url: string;
+  };
 }
 
 export interface SocialItem {

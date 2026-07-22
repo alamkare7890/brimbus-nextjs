@@ -26,6 +26,9 @@ export interface HomeBannerBlock {
   banner_sliders: BannerSlider[];
 }
 export interface Partner {
+  id: number;
+  url: string;
+  alt: string;
   logo: {
     url: string;
     alt?: string;
@@ -105,6 +108,7 @@ export interface OurProjects {
 
 export interface ServiceItem {
   id: number;
+  number: string;
   title: string;
   slug: string;
   content: string;

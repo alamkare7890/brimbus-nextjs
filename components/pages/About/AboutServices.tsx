@@ -95,8 +95,7 @@ export default function AboutServices({ data }: Props) {
           </div>
 
           <ThemeButton
-            href={data.button.url}
-            target={data.button.target || "_self"}
+            href={data.button.url}            
             className="theme_button theme_button_light bg-[#111111]"
           >
             <span className="button__spotlight" />

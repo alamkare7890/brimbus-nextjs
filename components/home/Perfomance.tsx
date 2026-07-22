@@ -73,7 +73,7 @@ export default function PerfomanceBlock({ data }: Props) {
           {data.perfomance_group.map((item, index) => (
             <div className="counter_box" key={index}>
               <div className="counter_nm flex justify-center text-[#111111] font-serif">
-                {item.counter_number.split("").map((char, i) =>
+                {item.counter_number.toString().split("").map((char, i) =>
                   /\d/.test(char) ? (
                     <span
                       key={i}

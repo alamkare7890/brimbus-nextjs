@@ -127,7 +127,7 @@ export default function Footer({ data }: Props) {
                                 {data.social_media_group?.social_list?.map((item, index) => (
                                     <li key={index}>
                                     <Link
-                                        href={item.social_links}
+                                        href={item.social_links.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >

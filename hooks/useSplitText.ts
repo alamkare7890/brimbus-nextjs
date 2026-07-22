@@ -1,8 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export function useSplitText() {
-    useEffect(() => {
+  useEffect(() => {
     const splitInstances: SplitType[] = [];
 
     function createScrollTrigger(
@@ -12,7 +18,6 @@ export function useSplitText() {
       ScrollTrigger.create({
         trigger: triggerElement,
         start: "top bottom",
-
         onLeaveBack: () => {
           timeline.progress(0);
           timeline.pause();
@@ -22,7 +27,6 @@ export function useSplitText() {
       ScrollTrigger.create({
         trigger: triggerElement,
         start: "top 70%",
-
         onEnter: () => {
           timeline.play();
         },
@@ -32,7 +36,7 @@ export function useSplitText() {
     // Split Text
     document.querySelectorAll("[text-split]").forEach((element) => {
       const split = new SplitType(element as HTMLElement, {
-        types: "words, chars",
+        types: "words,chars",
         tagName: "span",
       });
 
@@ -67,14 +71,11 @@ export function useSplitText() {
         };
 
         const leave = () => {
-          gsap.to(
-            [char, chars[i - 1], chars[i + 1]].filter(Boolean),
-            {
-              y: 0,
-              duration: 0.3,
-              ease: "power2.out",
-            }
-          );
+          gsap.to([char, chars[i - 1], chars[i + 1]].filter(Boolean), {
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
         };
 
         char.addEventListener("mouseenter", enter);
@@ -94,7 +95,6 @@ export function useSplitText() {
         yPercent: 100,
         duration: 0.8,
         ease: "power3.out",
-
         stagger: {
           each: 0.05,
         },
@@ -127,9 +127,7 @@ export function useSplitText() {
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
       splitInstances.forEach((split) => split.revert());
     };
-
-  })
+  }, []);
 }

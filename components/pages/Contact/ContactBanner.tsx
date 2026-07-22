@@ -23,8 +23,7 @@ export default function ContactBanner({ data }: Props) {
             {data.button?.title && (
               <div className="btn_wrapper mt-6 hidden md:block">
                 <ThemeButton
-                  href={data.button.url}
-                  target={data.button.target || "_self"}
+                  href={data.button.url}                  
                   className="theme_button theme_button_light bg-[#111111]"
                 >
                   <span className="button__spotlight"></span>
@@ -47,8 +46,7 @@ export default function ContactBanner({ data }: Props) {
             {data.button?.title && (
               <div className="btn_wrapper mt-6 block md:hidden">
                 <ThemeButton
-                  href={data.button.url}
-                  target={data.button.target || "_self"}
+                  href={data.button.url}                  
                   className="theme_button theme_button_light bg-[#111111]"
                 >
                   <span className="button__spotlight"></span>
