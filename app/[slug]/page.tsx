@@ -1,9 +1,8 @@
 import { getPageBySlug } from "@/lib/wordpress/global";
-
-
 import { notFound } from "next/navigation";
 
 import About from "@/components/pages/About";
+import Contact from "@/components/pages/Contact";
 
 export default async function Page({
   params,
@@ -19,8 +18,12 @@ export default async function Page({
   }
 
   switch (page.id) {
-    case "2915":
+    case 2915:
       return <About data={page.acf} />;
+    case 15:
+      return <Contact data={page.acf} />;
+
     default:
+      notFound();
   }
 }

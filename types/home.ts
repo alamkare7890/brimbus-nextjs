@@ -110,6 +110,7 @@ export interface ServiceItem {
   content: string;
   excerpt: string;
   featured_image: string;
+  service_image: string;
 }
 
 export interface OurServices {

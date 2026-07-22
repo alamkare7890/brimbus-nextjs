@@ -146,6 +146,7 @@ p{
 }
 
 /*Insights*/
+
 .visit_btn{
     @apply flex gap-3 items-center text-lg text-[#282829] font-bold capitalize transition-all;
 }
@@ -650,6 +651,15 @@ video::-webkit-media-controls {
     height: 500px;
     width: 100%;
     object-fit: cover;
+}
+.info_box ul li img{
+    filter: invert(1);
+}
+.social_media_box ul li a:hover img{
+    filter: invert(1);
+}
+.form_button{
+    @apply w-full cursor-pointer py-3 px-6 h-full;
 }
 /*responsive*/
 @media (max-width: 1024px){

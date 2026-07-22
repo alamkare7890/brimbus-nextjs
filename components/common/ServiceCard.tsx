@@ -28,7 +28,7 @@ export default function ServiceCard({ service }: Props) {
         <SwiperSlide>
           <div className="service_img_wrapper">
             <Image
-              src={service.featured_image}
+              src={service.service_image}
               alt={service.title}
               width={600}
               height={200}

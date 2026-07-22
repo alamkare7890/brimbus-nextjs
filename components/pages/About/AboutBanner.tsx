@@ -1,9 +1,8 @@
+import { AboutBannerBlock } from "@/types/about";
+
 
 type Props = {
-  data: {
-    heading: string;
-    background_image: string;
-  };
+  data: AboutBannerBlock;
 };
 
 export default function AboutBanner({ data }: Props) {
@@ -11,7 +10,7 @@ export default function AboutBanner({ data }: Props) {
     <section
       className="about_banner overlay relative z-0 banner_overlay pt-60 pb-40 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url(${data.background_image})`,
+        backgroundImage: `url(${data.background_image?.url})`,
       }}
     >
       <div className="container_wrapper">

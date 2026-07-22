@@ -30,7 +30,7 @@ export default async function HomePage() {
             <ProjectsBlock data={projectsBlock} />
             <PerfomanceBlock data={countersBlock} />
             <ServicesBlock data={servicesBlock} />
-            {/* <ProcessBlock data={processsBlock} /> */}
+            <ProcessBlock data={processsBlock} />
             <TestimonialBlock data={testimonialBlock} />
             <InsightsBlock data={insightsBlock} />
         </>

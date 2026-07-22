@@ -40,7 +40,7 @@ export default function Header({ data }: Props) {
         <div
             className="container_wrapper header_wrapper md:!px-6 !py-3 mt-4 md:mt-6 bg-[#FFFFFF] rounded-full flex items-center justify-between">
             <div className="theme_logo">
-                <Link href="index.html">
+                <Link href="/">
                 <Image
                     src={data.site_logo.url}
                     alt={data.site_logo.alt}
@@ -55,7 +55,7 @@ export default function Header({ data }: Props) {
                         <Link href="/" text-split="true" letters-slide-up="true">Home</Link>
                     </li>
                     <li>
-                        <Link href="/" text-split="true" letters-slide-up="true">About Us</Link>
+                        <Link href="graphic-design-agency-in-bangalore" text-split="true" letters-slide-up="true">About Us</Link>
                     </li>
                     <li>
                         <Link href="/" text-split="true" letters-slide-up="true">Services</Link>
@@ -67,7 +67,7 @@ export default function Header({ data }: Props) {
                         <Link href="/" text-split="true" letters-slide-up="true">Blogs</Link>
                     </li>
                     <li>
-                        <Link href="/" text-split="true" letters-slide-up="true">Contact Us</Link>
+                        <Link href="contact-us-for-graphics-designing-work" text-split="true" letters-slide-up="true">Contact Us</Link>
                     </li>
                 </ul>
             </div>

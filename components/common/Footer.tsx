@@ -11,9 +11,10 @@ type Props = {
 };
 export default function Footer({ data }: Props) {
   return (
-    <footer className="site_footer">
+    <footer className="site_footer min-h-[1300px] md:min-h-[1200px]">
         <div className="footer_b invisible">
             <Image
+                alt={data.cta_group.button.title}
                 src={data.cta_group.background_image.url}
                 width={150}
                 height={50}

@@ -43,10 +43,7 @@ export default function TestimonialSection({ data }: Props) {
 
                 <Swiper
                     className="testimonialSwiper"
-                    slidesPerView={isMobile ? 1 : 3}
-                    spaceBetween={20}
-                    grabCursor
-                    loop={false}
+                    slidesPerView={isMobile ? 1 : 0}
                     breakpoints={
                         isMobile
                             ? {

@@ -23,7 +23,7 @@ export default function InsightSection({ data }: Props) {
     }, [data.insights_list]);
   return (
     <section className="py-16 sm:py-20 md:py-24 lg:py-32">
-      <div className="mx-auto max-w-[1700px] px-4">
+      <div className="container_wrapper">
 
         <div className="heading_wrapper text-center mb-12 md:mb-16">
           <h6 className="text-base text-[#111111]">

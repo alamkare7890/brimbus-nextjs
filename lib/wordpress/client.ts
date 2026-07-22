@@ -7,11 +7,11 @@ export async function wpFetch(
   const res = await fetch(`https://api.brimbus.com/wp-json${endpoint}`, {
     ...options,
     next: {
-      revalidate: 60, // Cache for 60 seconds
+      revalidate: 300, // Cache for 60 seconds
     },
   });
 
-  if (!res.ok) {
+  if (!res.ok) { 
     throw new Error(`WordPress API Error: ${res.status}`);
   }
 
