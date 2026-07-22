@@ -1,25 +1,41 @@
 import { notFound } from "next/navigation";
+
+import { getPageBySlug } from "@/lib/wordpress/global";
 import { getPostBySlug } from "@/lib/wordpress/posts";
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+import About from "@/components/pages/About";
+import Contact from "@/components/pages/Contact";
+import BlogSingle from "@/components/pages/BlogSingle";
 
-export default async function BlogSingle({ params }: Props) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
 
-  const post = await getPostBySlug(slug);
+  // Try WordPress Page first
+  const page = await getPageBySlug(slug);
 
-  if (!post) {
-    notFound();
+  if (page) {
+    switch (page.id) {
+      case 2915:
+        return <About data={page.acf} />;
+
+      case 15:
+        return <Contact data={page.acf} />;
+
+      default:
+        notFound();
+    }
   }
 
-  return(
-    <div>
-      <h1 className="text-7xl">{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </div>
-  );
+  // If not a page, try WordPress Post
+  const post = await getPostBySlug(slug);
+
+  if (post) {
+    return <BlogSingle post={post} />;
+  }
+
+  notFound();
 }

@@ -9,7 +9,7 @@ export async function wpFetch(
     next: {
       revalidate: 300, // Cache for 60 seconds
     },
-  });
+  }); 
 
   if (!res.ok) { 
     throw new Error(`WordPress API Error: ${res.status}`);
