@@ -1,29 +1,25 @@
-import { getPageBySlug } from "@/lib/wordpress/global";
 import { notFound } from "next/navigation";
+import { getPostBySlug } from "@/lib/wordpress/posts";
 
-import About from "@/components/pages/About";
-import Contact from "@/components/pages/Contact";
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogSingle({ params }: Props) {
   const { slug } = await params;
 
-  const page = await getPageBySlug(slug);
+  const post = await getPostBySlug(slug);
 
-  if (!page) {
+  if (!post) {
     notFound();
   }
 
-  switch (page.id) {
-    case 2915:
-      return <About data={page.acf} />;
-    case 15:
-      return <Contact data={page.acf} />;
-
-    default:
-      notFound();
-  }
+  return(
+    <div>
+      <h1 className="text-7xl">{post.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </div>
+  );
 }
