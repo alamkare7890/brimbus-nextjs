@@ -8,8 +8,8 @@ export interface ProjectsBannerBlock {
   heading: string;
   description: string;
   button: Button | "";
-  banner_image: string | false;
-  banner_video: string | false;
+  banner_image: string;
+  banner_video: string;
 }
 export interface ProjectsListBlock {
   short_heading: string;

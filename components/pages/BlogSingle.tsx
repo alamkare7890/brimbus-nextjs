@@ -59,13 +59,7 @@ export default function BlogSingle({ post }: Props) {
 
             {/* Meta */}
             <div className="flex justify-center items-center gap-4 mt-8 text-sm text-neutral-500">
-              <span>
-                {new Date(post.date).toLocaleDateString("en-IN", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </span>
+              
 
               <span>•</span>
 
