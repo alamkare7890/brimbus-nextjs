@@ -5,6 +5,7 @@ import { getPostBySlug } from "@/lib/wordpress/posts";
 
 import About from "@/components/pages/About";
 import Contact from "@/components/pages/Contact";
+import Projects from "@/components/pages/Projects";
 import BlogSingle from "@/components/pages/BlogSingle";
 
 export default async function Page({
@@ -24,6 +25,9 @@ export default async function Page({
 
       case 15:
         return <Contact data={page.acf} />;
+
+      case 12:
+        return <Projects data={page.acf} />;
 
       default:
         notFound();

@@ -1,6 +1,6 @@
 import { wpFetch } from "./client";
 
-export async function getProjects(id: number) {
+export async function getProjects() {
   return wpFetch(`/custom/v1/projects`);
 }
 export async function getProject(id: number) {

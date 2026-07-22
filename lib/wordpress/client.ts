@@ -15,9 +15,9 @@ export async function wpFetch(endpoint: string, options: RequestInit = {}) {
   if (!res.ok) {
     const body = await res.text();
 
-    console.error("FAILED URL:", url);
-    console.error("STATUS:", res.status);
-    console.error("BODY:", body);
+    // console.error("FAILED URL:", url);
+    // console.error("STATUS:", res.status);
+    // console.error("BODY:", body);
 
     throw new Error(`WordPress API Error: ${res.status}`);
   }
