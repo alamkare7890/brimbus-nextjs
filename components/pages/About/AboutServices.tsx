@@ -2,14 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import ThemeButton from "@/components/common/ThemeButton";
 import { AboutServicesBlock, ServiceItem } from "@/types/about";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { getServicesByIds } from "@/lib/wordpress/services";
 
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "swiper/css";

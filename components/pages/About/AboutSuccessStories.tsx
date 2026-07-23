@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ThemeButton from "@/components/common/ThemeButton";
 gsap.registerPlugin(ScrollTrigger);
-import Link from "next/link";
 import { AboutSuccessStoriesBlock } from "@/types/about";
 
 type Props = {
